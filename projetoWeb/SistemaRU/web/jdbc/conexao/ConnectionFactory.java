@@ -8,11 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ConnectionFactory {
-	
 	private static ConnectionFactory instancia;
-	
 	private final String DRIVE = "com.mysql.jdbc.Driver";
-	private final String URL = "jdbc:mysql://localhost/webprojectdatabase"; 
+	private final String URL = "jdbc:mysql://localhost/restaurante"; 
 	private final String USER = "root";
 	private final String PASSWORD = "";
 	
