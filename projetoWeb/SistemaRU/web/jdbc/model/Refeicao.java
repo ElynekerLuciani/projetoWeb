@@ -1,5 +1,8 @@
 package web.jdbc.model;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import web.jdbc.dao.RefeicaoDAO;
 
 public class Refeicao {
@@ -15,13 +18,40 @@ public class Refeicao {
 	public void criarRefeicao(Refeicao refeicao) {
 		Refeicao novaRefeicao = new Refeicao();
 		try {
-			novaRefeicao.setCategoria(refeicao.getCategoria());
+			novaRefeicao.categoria.setIdCategoria(refeicao.categoria.getIdCategoria());
 			novaRefeicao.setDescricaoRefeicao(refeicao.getDescricaoRefeicao());
 			refeicaoDAO.criarRefeicaoDAO(novaRefeicao);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+
+	}
+	
+	public void excluirRefeicao(int idRefeicao) {
+		try {
+			refeicaoDAO.excluirRefeicaoDAO(idRefeicao);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void alterarRefeicao(Refeicao refeicao) {
+		Refeicao alterarRefeicao = new Refeicao();
+	
+		try {
+			alterarRefeicao.setIdRefeicao(refeicao.getIdRefeicao());
+			alterarRefeicao.categoria.setIdCategoria(refeicao.getCategoria().getIdCategoria());
+			alterarRefeicao.setDescricaoRefeicao(refeicao.getDescricaoRefeicao());
+			refeicaoDAO.alterarRefeicaoDAO(alterarRefeicao);
 		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public ArrayList<Refeicao> listarRefeicao() throws ClassNotFoundException, SQLException {
+		ArrayList<Refeicao> listar = refeicaoDAO.listarRefeicao();
+		return listar;
 	}
 	
 	//METODOS GETTERS E SETTERS

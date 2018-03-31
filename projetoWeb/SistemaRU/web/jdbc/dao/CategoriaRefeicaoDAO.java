@@ -61,11 +61,11 @@ public class CategoriaRefeicaoDAO {
 		Connection conexao = dao.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet result = null;
+		CategoriaRefeicao categoria = new CategoriaRefeicao();
 		try {
 			stmt = conexao.prepareStatement("SELECT * FROM CATEGORIAREFEICAO");
 			result = stmt.executeQuery();
 			while(result.next()) {
-				CategoriaRefeicao categoria = new CategoriaRefeicao();
 				categoria.setIdCategoria(result.getInt("IDCATEGORIA"));
 				categoria.setNomeCategoria(result.getString("NOMECATEGORIA"));
 				categorias.add(categoria);

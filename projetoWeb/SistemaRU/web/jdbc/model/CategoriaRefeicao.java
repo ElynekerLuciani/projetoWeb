@@ -1,4 +1,6 @@
 package web.jdbc.model;
+import java.util.Vector;
+
 import web.jdbc.dao.CategoriaRefeicaoDAO;
 
 public class CategoriaRefeicao {
@@ -19,6 +21,13 @@ public class CategoriaRefeicao {
 		} catch (Exception e) {
 			System.out.println("categoria refeicao" + e.getMessage());
 		}
+	}
+	
+	public Vector<CategoriaRefeicao> listarCategoria() throws Exception {
+		CategoriaRefeicaoDAO con = new CategoriaRefeicaoDAO();
+		Vector<CategoriaRefeicao> aux = con.listarCategoria();
+		return aux;
+		
 	}
 	
 	public void removerCategoria(int removerCategoria) {
