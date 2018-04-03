@@ -23,6 +23,7 @@ public class ConnectionFactory {
             instancia = new ConnectionFactory();
         }
         return instancia;
+        
     }
 
     public Connection getConnection(){
