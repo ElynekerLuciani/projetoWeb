@@ -55,7 +55,9 @@ public class Teste {
 			System.out.println("refeicao excluida");
 		}catch (Exception e) {
 			// TODO: handle exception
-		}*/
+		}
+		for(int i = 0)
+		*/
 		try {
 			Refeicao editar = new Refeicao();
 			editar.setIdRefeicao(1);
