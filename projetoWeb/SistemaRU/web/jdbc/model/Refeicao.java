@@ -88,9 +88,9 @@ public class Refeicao extends Manipulable{
 		
 	}
 
-	public static ArrayList<Refeicao> listarRefeicao() throws ClassNotFoundException, SQLException {
-        ArrayList<Refeicao> listar = RefeicaoDAO.getInstancia().listarRefeicao();
-        return listar;
+	public static ArrayList<Refeicao> listar() throws ClassNotFoundException, SQLException {
+        ArrayList<Refeicao> lista = RefeicaoDAO.getInstancia().listarRefeicao();
+        return lista;
     }
 	
 }
