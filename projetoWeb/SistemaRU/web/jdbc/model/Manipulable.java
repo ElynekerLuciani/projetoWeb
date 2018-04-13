@@ -1,7 +1,5 @@
 package web.jdbc.model;
 
-import java.util.List;
-
 public abstract class Manipulable{
 	private int id;
 	
