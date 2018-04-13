@@ -6,7 +6,8 @@ import java.util.List;
 
 import web.jdbc.dao.RefeicaoDAO;
 
-public class Refeicao extends Manipulable{
+public class Refeicao{
+	private int id;
     private CategoriaRefeicao categoria = new CategoriaRefeicao();
     private String descricaoRefeicao;
     private RefeicaoDAO refeicaoDAO = RefeicaoDAO.getInstancia();
@@ -54,6 +55,14 @@ public class Refeicao extends Manipulable{
 
     //METODOS GETTERS E SETTERS
 
+    public void setId(int id) {
+    	this.id = id;
+    }
+    
+    public int getId() {
+    	return id;
+    }
+    
     public CategoriaRefeicao getCategoria() {
         return categoria;
     }
@@ -70,33 +79,13 @@ public class Refeicao extends Manipulable{
         this.descricaoRefeicao = descricaoRefeicao;
     }
 
-	@Override
-	public void save() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	public static ArrayList<Refeicao> listar() throws ClassNotFoundException, SQLException {
         ArrayList<Refeicao> lista = RefeicaoDAO.getInstancia().listarRefeicao();
         return lista;
     }
 
-	@Override
-	public void find(int id) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 }
