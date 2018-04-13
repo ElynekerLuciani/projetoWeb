@@ -79,13 +79,8 @@ public class Refeicao{
         this.descricaoRefeicao = descricaoRefeicao;
     }
 
-	
-
 	public static ArrayList<Refeicao> listar() throws ClassNotFoundException, SQLException {
         ArrayList<Refeicao> lista = RefeicaoDAO.getInstancia().listarRefeicao();
         return lista;
-    }
-
-	
-	
+    }	
 }
