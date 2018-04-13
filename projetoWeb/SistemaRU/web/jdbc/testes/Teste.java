@@ -57,7 +57,7 @@ public class Teste {
 			// TODO: handle exception
 		}
 		for(int i = 0)
-		*/
+		
 		try {
 			Refeicao editar = new Refeicao();
 			editar.setIdRefeicao(1);
@@ -70,7 +70,7 @@ public class Teste {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+		*/
 	}
 
 }

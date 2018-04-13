@@ -2,11 +2,11 @@ package web.jdbc.model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import web.jdbc.dao.RefeicaoDAO;
 
-public class Refeicao {
-    private int idRefeicao;
+public class Refeicao extends Manipulable{
     private CategoriaRefeicao categoria = new CategoriaRefeicao();
     private String descricaoRefeicao;
     private RefeicaoDAO refeicaoDAO = RefeicaoDAO.getInstancia();
@@ -14,7 +14,8 @@ public class Refeicao {
     public Refeicao() {
 
     }
-
+    
+/*
     public void criarRefeicao(Refeicao refeicao) {
         Refeicao novaRefeicao = new Refeicao();
         try {
@@ -48,20 +49,10 @@ public class Refeicao {
             // TODO: handle exception
         }
     }
-
-    public ArrayList<Refeicao> listarRefeicao() throws ClassNotFoundException, SQLException {
-        ArrayList<Refeicao> listar = refeicaoDAO.listarRefeicao();
-        return listar;
-    }
+*/
+    
 
     //METODOS GETTERS E SETTERS
-    public int getIdRefeicao() {
-        return idRefeicao;
-    }
-
-    public void setIdRefeicao(int idRefeicao) {
-        this.idRefeicao = idRefeicao;
-    }
 
     public CategoriaRefeicao getCategoria() {
         return categoria;
@@ -77,6 +68,29 @@ public class Refeicao {
 
     public void setDescricaoRefeicao(String descricaoRefeicao) {
         this.descricaoRefeicao = descricaoRefeicao;
+    }
+
+	@Override
+	public void save() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static ArrayList<Refeicao> listarRefeicao() throws ClassNotFoundException, SQLException {
+        ArrayList<Refeicao> listar = RefeicaoDAO.getInstancia().listarRefeicao();
+        return listar;
     }
 	
 }

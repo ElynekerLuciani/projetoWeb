@@ -65,7 +65,7 @@ public class RefeicaoDAO {
         try {
             stmt = conexao.prepareStatement("UPDATE REFEICAO SET IDCATEGORIAREFEICAO = ' "+ alterarRefeicao.getCategoria().getIdCategoria() +
                                                                                 "', DESCRICAO = '"+ alterarRefeicao.getDescricaoRefeicao() + 
-                                                                                "' WHERE IDREFEICAO = ' "+ alterarRefeicao.getIdRefeicao()+ " '");
+                                                                                "' WHERE IDREFEICAO = ' "+ alterarRefeicao.getId()+ " '");
             stmt.executeUpdate();
         } catch (Exception e) {
             Logger.getLogger(RefeicaoDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -84,7 +84,7 @@ public class RefeicaoDAO {
             stmt = conexao.prepareStatement("SELECT * FROM REFEICAO");
             result = stmt.executeQuery();
             while(result.next()) {
-                ref.setIdRefeicao(result.getInt("IDREFEICAO"));
+                ref.setId(result.getInt("IDREFEICAO"));
                 ref.getCategoria().setIdCategoria(result.getInt("IDCATEGORIAREFEICAO"));
                 ref.setDescricaoRefeicao(result.getString("DESCRICAO"));
                 refeicao.add(ref);	
