@@ -1,12 +1,7 @@
 package web.jdbc.testes;
 
 import java.util.Vector;
-
 import com.sun.javafx.scene.layout.region.Margins.Converter;
-
-import web.jdbc.dao.RefeicaoDAO;
-import web.jdbc.model.CategoriaRefeicao;
-import web.jdbc.model.Refeicao;
 
 public class Teste {
 

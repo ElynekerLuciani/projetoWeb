@@ -14,10 +14,6 @@ public class ConnectionFactory {
     private final String USER = "root";
     private final String PASSWORD = "";
 
-    public ConnectionFactory() {
-
-    }
-
     public static ConnectionFactory getInstancia() {
         if(instancia == null){
             instancia = new ConnectionFactory();
