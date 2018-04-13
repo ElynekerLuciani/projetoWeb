@@ -92,5 +92,11 @@ public class Refeicao extends Manipulable{
         ArrayList<Refeicao> lista = RefeicaoDAO.getInstancia().listarRefeicao();
         return lista;
     }
+
+	@Override
+	public void find(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

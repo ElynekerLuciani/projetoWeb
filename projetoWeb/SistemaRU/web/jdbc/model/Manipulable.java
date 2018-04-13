@@ -6,6 +6,7 @@ public abstract class Manipulable{
 	public abstract void save();
 	public abstract void delete();
 	public abstract void update();
+	public abstract void find(int id);
 		
 	public void setId(int id) {
 		this.id = id;
