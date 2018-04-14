@@ -2,7 +2,7 @@ package web.jdbc.model;
 
 public class CategoriaAlimento implements InterfaceManipulable{
 	private int id;
-	private CategoriaAlimentoEnum nome;
+	private String nome;
 	
 	@Override
 	public void save() {
@@ -38,11 +38,11 @@ public class CategoriaAlimento implements InterfaceManipulable{
 		}
 	}
 
-	public CategoriaAlimentoEnum getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(CategoriaAlimentoEnum nome) {
+	public void setNome(String nome) {
 		if(nome != null) {
 			this.nome = nome;
 		}

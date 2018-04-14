@@ -3,7 +3,7 @@ package web.jdbc.model;
 public class Alimento implements InterfaceManipulable{
 	private int id;
 	private String nome;
-	private InformacaoNutricional infNutricional;
+	
 	private CategoriaAlimento categoria;
 	
 	
@@ -51,15 +51,6 @@ public class Alimento implements InterfaceManipulable{
 		}
 	}
 
-	public InformacaoNutricional getInfNutricional() {
-		return infNutricional;
-	}
-
-	public void setInfNutricional(InformacaoNutricional infNutricional) {
-		if(infNutricional != null) {
-			this.infNutricional = infNutricional;
-		}
-	}
 
 	public CategoriaAlimento getCategoria() {
 		return categoria;
