@@ -4,6 +4,9 @@ public class Alimento implements InterfaceManipulable{
 	private int id;
 	private String nome;
 	private CategoriaAlimento categoria;
+	private float calorias;
+	private float carboidratos;
+	private float fibras;
 	
 	
 	@Override
@@ -57,6 +60,36 @@ public class Alimento implements InterfaceManipulable{
 	public void setCategoria(CategoriaAlimento categoria) {
 		if(categoria != null) {
 			this.categoria = categoria;
+		}
+	}
+
+	public float getCalorias() {
+		return calorias;
+	}
+
+	public void setCalorias(float calorias) {
+		if(calorias >= 0) {
+			this.calorias = calorias;
+		}
+	}
+
+	public float getCarboidratos() {
+		return carboidratos;
+	}
+
+	public void setCarboidratos(float carboidratos) {
+		if(carboidratos >= 0) {
+			this.carboidratos = carboidratos;
+		}
+	}
+
+	public float getFibras() {
+		return fibras;
+	}
+
+	public void setFibras(float fibras) {
+		if(fibras >= 0) {
+			this.fibras = fibras;
 		}
 	}
 }
