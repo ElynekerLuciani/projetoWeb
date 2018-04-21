@@ -11,8 +11,7 @@ public class Alimento implements InterfaceManipulable{
 	
 	@Override
 	public void save() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	@Override

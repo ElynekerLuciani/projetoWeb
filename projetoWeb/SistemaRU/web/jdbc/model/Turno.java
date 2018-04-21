@@ -1,5 +1,6 @@
 package web.jdbc.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Turno implements InterfaceManipulable{
@@ -31,13 +32,17 @@ public class Turno implements InterfaceManipulable{
 		
 	}
 	
+	public List<Alimento> getAlimento(){
+		return this.alimentos;
+	}
+	
 	public void addAlimento(Alimento a) {
 		if(a != null) {
 			alimentos.add(a);
 		}
 	}
 	
-	public Alimento getAlimento(int id) {
+	public Alimento retornaAlimento(int id) {
 		for(Alimento ali : alimentos) {
 			if(ali.getId() == id) {
 				return ali;

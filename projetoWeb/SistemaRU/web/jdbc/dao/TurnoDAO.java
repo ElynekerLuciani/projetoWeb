@@ -8,26 +8,35 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import web.jdbc.conexao.ConnectionFactory;
+import web.jdbc.model.Alimento;
 import web.jdbc.model.CategoriaAlimento;
+import web.jdbc.model.Turno;
 
-public class CategoriaAlimentoDAO {
+public class TurnoDAO {
 	private ConnectionFactory dao = ConnectionFactory.getInstancia();
-    private static CategoriaAlimentoDAO instancia;
+    private static TurnoDAO instancia;
     
-    public static CategoriaAlimentoDAO getInstancia() {
+    public static TurnoDAO getInstancia() {
     	if(instancia == null) {
-    		instancia = new CategoriaAlimentoDAO();
+    		instancia = new TurnoDAO();
     	}
     	
     	return instancia;
     }
     
-    public void save(CategoriaAlimento catAlime) throws SQLException, ClassNotFoundException{
+    public void save(Turno turno) throws SQLException, ClassNotFoundException{
     	Connection conexao = dao.getConnection();
         PreparedStatement stmt = null;
         try {
             stmt = conexao.prepareStatement("");
-            stmt.setString(1, catAlime.getNome().toString());
+            stmt.setString(1, turno.getTurnoSemana().name());
+            
+            if(turno.getAlimento() != null) {
+            	for(Alimento a : turno.getAlimento()) {
+            		a.save();
+            	}
+            }
+            
             stmt.executeUpdate();
             
         } catch (Exception e) {
@@ -86,4 +95,6 @@ public class CategoriaAlimentoDAO {
             ConnectionFactory.closeConnection(conexao, stmt);
         }
     }
+
+	
 }

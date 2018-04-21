@@ -14,7 +14,6 @@ public class Cardapio implements InterfaceManipulable{
 	@Override
 	public void save() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

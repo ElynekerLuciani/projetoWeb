@@ -1,31 +1,57 @@
 package web.jdbc.model;
 
+import java.sql.SQLException;
+
+import web.jdbc.dao.CategoriaAlimentoDAO;
+
 public class CategoriaAlimento implements InterfaceManipulable{
 	private int id;
 	private String nome;
 	
 	@Override
 	public void save() {
-		// TODO Auto-generated method stub
-		
+		if(id == 0 && nome != null) {
+			try {
+				CategoriaAlimentoDAO.getInstancia().save(this);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		if(id != 0 && nome != null) {
+			try {
+				CategoriaAlimentoDAO.getInstancia().update(this);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public void find(int codigo) {
-		// TODO Auto-generated method stub
-		
+		if(codigo > 0) {
+			this.id = codigo;
+			try {
+				CategoriaAlimentoDAO.getInstancia().find(this);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public void delete() {
-		// TODO Auto-generated method stub
-		
+		if(this.id != 0) {
+			try {
+				CategoriaAlimentoDAO.getInstancia().delete(this);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public int getId() {
